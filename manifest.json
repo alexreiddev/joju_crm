@@ -2,12 +2,12 @@
     "name": "Green Growth CRM",
     "short_name": "GG CRM",
     "description": "Green Growth CRM - Sales & Business Management",
-    "start_url": "/index.html",
+    "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#1a5c2e",
     "orientation": "any",
-    "scope": "/",
+    "scope": "./",
     "icons": [
         {
             "src": "icons/icon-72.png",
