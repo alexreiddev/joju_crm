@@ -153,78 +153,33 @@
         <!-- Pages will be loaded here -->
     </main>
 
-    <!-- Create Deal Modal -->
-    <div class="modal-overlay" id="dealModal">
+    <!-- Universal Dynamic Modal -->
+    <div class="modal-overlay" id="crudModal">
         <div class="modal">
             <div class="modal-header">
-                <h2>Deals Information</h2>
-                <button class="modal-close" id="closeDealModal"><i class="fa-solid fa-xmark"></i></button>
+                <h2 id="modalTitle">Title</h2>
+                <button class="modal-close" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div class="modal-body">
-                <form id="dealForm">
-                    <div class="form-group">
-                        <label>Deal Owner</label>
-                        <input type="text" name="dealOwner" placeholder="Deal Owner">
-                    </div>
-                    <div class="form-group">
-                        <label>Deal Name</label>
-                        <input type="text" name="dealName" placeholder="Deal Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Account Name</label>
-                        <input type="text" name="accountName" placeholder="Account Name">
-                    </div>
-                    <div class="form-group">
-                        <label>Amount</label>
-                        <input type="number" name="amount" placeholder="Amount">
-                    </div>
-                    <div class="form-group">
-                        <label>Closing Date</label>
-                        <input type="date" name="closingDate">
-                    </div>
-                    <div class="form-group">
-                        <label>Stage</label>
-                        <select name="stage">
-                            <option value="New">New</option>
-                            <option value="Qualification">Qualification</option>
-                            <option value="Proposal">Proposal</option>
-                            <option value="Negotiation">Negotiation</option>
-                            <option value="Won">Won</option>
-                            <option value="Lost">Lost</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Lead Source</label>
-                        <select name="leadSource">
-                            <option value="Cold Call">Cold Call</option>
-                            <option value="Email">Email</option>
-                            <option value="Website">Website</option>
-                            <option value="Referral">Referral</option>
-                            <option value="Social Media">Social Media</option>
-                            <option value="Advertisement">Advertisement</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Contact Name</label>
-                        <input type="text" name="contactName" placeholder="Phone">
-                    </div>
-                    <div class="form-group">
-                        <label>Description</label>
-                        <textarea name="description" placeholder="Description" rows="4"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Invoice Number</label>
-                        <input type="text" name="invoiceNumber" placeholder="Quote/Invoice Number">
-                    </div>
-                    <div class="form-group">
-                        <label>Quote/Invoice</label>
-                        <input type="file" name="quoteFile">
-                    </div>
-                </form>
+            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-footer" id="modalFooter"></div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal-overlay" id="deleteModal">
+        <div class="modal" style="max-width:400px">
+            <div class="modal-header">
+                <h2>Confirm Delete</h2>
+                <button class="modal-close" onclick="closeDeleteModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" style="text-align:center;padding:30px">
+                <i class="fa-solid fa-triangle-exclamation" style="font-size:48px;color:#e91e63;margin-bottom:16px;display:block"></i>
+                <p style="font-size:16px;color:var(--gray-700)" id="deleteMessage">Are you sure you want to delete this item?</p>
+                <p style="font-size:13px;color:var(--gray-500);margin-top:8px">This action cannot be undone.</p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" id="submitDeal">Submit</button>
-                <button class="btn btn-secondary" id="cancelDeal">Close</button>
+                <button class="btn btn-primary" style="background:#c62828" id="confirmDeleteBtn">Delete</button>
+                <button class="btn btn-secondary" onclick="closeDeleteModal()">Cancel</button>
             </div>
         </div>
     </div>
