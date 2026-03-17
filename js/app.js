@@ -143,6 +143,93 @@ function logActivity(text, type) {
 let AppData = loadData();
 
 // ==========================================
+// Login System
+// ==========================================
+const USERS = [
+    { name: 'Julia Hudda', role: 'Admin', pin: '1234' },
+    { name: 'Ahmad Al Rashid', role: 'Sales Rep', pin: '1234' },
+    { name: 'Fatima Hassan', role: 'Marketing', pin: '1234' },
+];
+
+let loggedInUser = null;
+
+function renderLoginScreen() {
+    const userOptions = USERS.map(u => '<option value="' + u.name + '">' + u.name + ' (' + u.role + ')</option>').join('');
+    mainContent.innerHTML =
+        '<div class="login-screen">' +
+        '<div class="login-card">' +
+        '<div class="login-logo"><i class="fa-solid fa-leaf"></i></div>' +
+        '<h1>Green Growth</h1>' +
+        '<p class="login-subtitle">CRM & Business Management</p>' +
+        '<div class="form-group"><label>Select User</label><select id="loginUser">' + userOptions + '</select></div>' +
+        '<div class="form-group"><label>Enter PIN</label>' +
+        '<div class="pin-input-group"><input type="password" maxlength="1" class="pin-digit" data-index="0"><input type="password" maxlength="1" class="pin-digit" data-index="1"><input type="password" maxlength="1" class="pin-digit" data-index="2"><input type="password" maxlength="1" class="pin-digit" data-index="3"></div></div>' +
+        '<div class="login-error" id="loginError"></div>' +
+        '<button class="login-btn" id="loginBtn">Sign In</button>' +
+        '<p class="login-hint">Default PIN: 1234</p>' +
+        '</div></div>';
+    bindLoginEvents();
+}
+
+function bindLoginEvents() {
+    const pinDigits = document.querySelectorAll('.pin-digit');
+    pinDigits.forEach((input, i) => {
+        input.addEventListener('input', () => {
+            if (input.value.length === 1 && i < pinDigits.length - 1) {
+                pinDigits[i + 1].focus();
+            }
+        });
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Backspace' && !input.value && i > 0) {
+                pinDigits[i - 1].focus();
+            }
+            if (e.key === 'Enter') {
+                document.getElementById('loginBtn').click();
+            }
+        });
+    });
+
+    document.getElementById('loginBtn').addEventListener('click', () => {
+        const selectedName = document.getElementById('loginUser').value;
+        const pin = Array.from(pinDigits).map(d => d.value).join('');
+        const user = USERS.find(u => u.name === selectedName);
+        if (!user) { document.getElementById('loginError').textContent = 'Please select a user'; return; }
+        if (pin !== user.pin) { document.getElementById('loginError').textContent = 'Incorrect PIN. Try 1234'; pinDigits.forEach(d => { d.value = ''; }); pinDigits[0].focus(); return; }
+
+        loggedInUser = user;
+        sessionStorage.setItem('loggedInUser', JSON.stringify(user));
+        enterApp();
+    });
+}
+
+function enterApp() {
+    document.body.classList.remove('login-mode');
+    // Update sidebar profile
+    const initials = loggedInUser.name.split(' ').map(w => w[0]).join('');
+    const sidebarAvatar = document.getElementById('sidebarAvatar');
+    const sidebarName = document.getElementById('sidebarName');
+    const sidebarRole = document.getElementById('sidebarRole');
+    const navAvatar = document.getElementById('navAvatar');
+    if (sidebarAvatar) sidebarAvatar.textContent = initials;
+    if (sidebarName) sidebarName.textContent = loggedInUser.name;
+    if (sidebarRole) sidebarRole.textContent = loggedInUser.role;
+    if (navAvatar) navAvatar.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(loggedInUser.name) + '&background=e8d5d0&color=333&size=40';
+    // Open sales submenu by default
+    const salesSubmenu = document.getElementById('submenu-sales');
+    const salesToggle = document.querySelector('[data-submenu="sales"]');
+    if (salesSubmenu) salesSubmenu.classList.add('open');
+    if (salesToggle) salesToggle.classList.add('expanded');
+    navigateTo('deals');
+}
+
+function logout() {
+    loggedInUser = null;
+    sessionStorage.removeItem('loggedInUser');
+    document.body.classList.add('login-mode');
+    renderLoginScreen();
+}
+
+// ==========================================
 // App State
 // ==========================================
 let currentPage = 'deals';
@@ -1321,9 +1408,20 @@ function renderComingSoon() {
 // Initialize App
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
-    const salesSubmenu = document.getElementById('submenu-sales');
-    const salesToggle = document.querySelector('[data-submenu="sales"]');
-    if (salesSubmenu) salesSubmenu.classList.add('open');
-    if (salesToggle) salesToggle.classList.add('expanded');
-    renderPage('deals');
+    // Logout button
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) logoutBtn.addEventListener('click', logout);
+
+    // Check for existing session
+    const savedUser = sessionStorage.getItem('loggedInUser');
+    if (savedUser) {
+        try {
+            loggedInUser = JSON.parse(savedUser);
+            enterApp();
+        } catch (e) {
+            renderLoginScreen();
+        }
+    } else {
+        renderLoginScreen();
+    }
 });
