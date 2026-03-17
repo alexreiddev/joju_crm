@@ -22,10 +22,13 @@
 
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ApexCharts CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
-<body>
+<body class="login-mode">
     <!-- Top Navbar -->
-    <nav class="top-navbar">
+    <nav class="top-navbar" id="topNavbar">
         <div class="nav-left">
             <div class="logo">
                 <i class="fa-solid fa-leaf logo-icon"></i>
@@ -38,15 +41,8 @@
             <button class="nav-btn search-btn" id="searchToggle">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <div class="status-toggle">
-                <span class="status-label">in</span>
-                <label class="switch">
-                    <input type="checkbox" id="statusToggle" checked>
-                    <span class="slider round"></span>
-                </label>
-            </div>
             <div class="user-avatar" id="profileToggle">
-                <img src="https://ui-avatars.com/api/?name=Julia+Hudda&background=e8d5d0&color=333&size=40" alt="User">
+                <img src="https://ui-avatars.com/api/?name=User&background=e8d5d0&color=333&size=40" alt="User" id="navAvatar">
             </div>
         </div>
     </nav>
@@ -54,95 +50,14 @@
     <!-- Search Bar (hidden by default) -->
     <div class="search-overlay" id="searchOverlay">
         <div class="search-container">
-            <input type="text" placeholder="Search..." id="globalSearch" autofocus>
+            <input type="text" placeholder="Search across all modules..." id="globalSearch" autofocus>
             <button class="search-close" id="searchClose"><i class="fa-solid fa-xmark"></i></button>
         </div>
     </div>
 
-    <!-- Sidebar -->
+    <!-- Sidebar - will be built dynamically by JS based on user role -->
     <aside class="sidebar" id="sidebar">
-        <div class="sidebar-profile">
-            <div class="profile-avatar">
-                <img src="https://ui-avatars.com/api/?name=Julia+Hudda&background=e8d5d0&color=333&size=100" alt="Julia Hudda">
-            </div>
-            <h3 class="profile-name">Julia Hudda</h3>
-            <div class="profile-status">
-                <span class="status-dot online"></span>
-                <span>Online</span>
-            </div>
-        </div>
-        <div class="sidebar-menu-label">MENU</div>
-        <ul class="sidebar-menu">
-            <li class="menu-item">
-                <a href="#" class="menu-link" data-page="dashboard">
-                    <i class="fa-solid fa-grip"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li class="menu-item has-submenu">
-                <a href="#" class="menu-link submenu-toggle" data-submenu="sales">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <span>Sales</span>
-                    <i class="fa-solid fa-chevron-down arrow"></i>
-                </a>
-                <ul class="submenu" id="submenu-sales">
-                    <li><a href="#" class="menu-link" data-page="leads">Leads</a></li>
-                    <li><a href="#" class="menu-link" data-page="contacts">Contacts</a></li>
-                    <li><a href="#" class="menu-link" data-page="accounts">Accounts</a></li>
-                    <li><a href="#" class="menu-link active" data-page="deals">Deals</a></li>
-                    <li><a href="#" class="menu-link" data-page="forecast">Forecast</a></li>
-                    <li><a href="#" class="menu-link" data-page="campaign">Campaign</a></li>
-                </ul>
-            </li>
-            <li class="menu-item has-submenu">
-                <a href="#" class="menu-link submenu-toggle" data-submenu="activities">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    <span>Activities</span>
-                    <i class="fa-solid fa-chevron-down arrow"></i>
-                </a>
-                <ul class="submenu" id="submenu-activities">
-                    <li><a href="#" class="menu-link" data-page="tasks">Task</a></li>
-                    <li><a href="#" class="menu-link" data-page="meetings">Meeting</a></li>
-                    <li><a href="#" class="menu-link" data-page="calls">Calls</a></li>
-                    <li><a href="#" class="menu-link" data-page="attendance">Attendance</a></li>
-                </ul>
-            </li>
-            <li class="menu-item has-submenu">
-                <a href="#" class="menu-link submenu-toggle" data-submenu="production">
-                    <i class="fa-solid fa-gears"></i>
-                    <span>Production</span>
-                    <i class="fa-solid fa-chevron-down arrow"></i>
-                </a>
-                <ul class="submenu" id="submenu-production">
-                    <li><a href="#" class="menu-link" data-page="pending-orders">Pending Orders</a></li>
-                    <li><a href="#" class="menu-link" data-page="shipped-orders">Shipped Orders</a></li>
-                </ul>
-            </li>
-            <li class="menu-item has-submenu">
-                <a href="#" class="menu-link submenu-toggle" data-submenu="finance">
-                    <i class="fa-solid fa-building-columns"></i>
-                    <span>Finance</span>
-                    <i class="fa-solid fa-chevron-down arrow"></i>
-                </a>
-                <ul class="submenu" id="submenu-finance">
-                    <li><a href="#" class="menu-link" data-page="invoices">Invoices</a></li>
-                    <li><a href="#" class="menu-link" data-page="payments">Payments</a></li>
-                    <li><a href="#" class="menu-link" data-page="expenses">Expenses</a></li>
-                </ul>
-            </li>
-            <li class="menu-item has-submenu">
-                <a href="#" class="menu-link submenu-toggle" data-submenu="settings">
-                    <i class="fa-solid fa-gear"></i>
-                    <span>Settings</span>
-                    <i class="fa-solid fa-chevron-down arrow"></i>
-                </a>
-                <ul class="submenu" id="submenu-settings">
-                    <li><a href="#" class="menu-link" data-page="profile">Profile</a></li>
-                    <li><a href="#" class="menu-link" data-page="company">Company</a></li>
-                    <li><a href="#" class="menu-link" data-page="users">Users</a></li>
-                </ul>
-            </li>
-        </ul>
+        <!-- Sidebar content built by buildSidebar() in app.js -->
     </aside>
 
     <!-- Sidebar Overlay for mobile -->
@@ -150,8 +65,16 @@
 
     <!-- Main Content -->
     <main class="main-content" id="mainContent">
-        <!-- Pages will be loaded here -->
+        <!-- Pages rendered here by JS -->
     </main>
+
+    <!-- Detail Panel -->
+    <div class="detail-panel-overlay" id="detailPanelOverlay">
+        <div class="detail-panel" id="detailPanel">
+            <div class="detail-panel-header" id="detailPanelHeader"></div>
+            <div class="detail-panel-body" id="detailPanelBody"></div>
+        </div>
+    </div>
 
     <!-- Universal Dynamic Modal -->
     <div class="modal-overlay" id="crudModal">
