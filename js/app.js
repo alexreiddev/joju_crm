@@ -7,109 +7,109 @@
 // ==========================================
 const DEFAULT_DATA = {
     deals: [
-        { id: 1, owner: 'Julia Hudda', name: 'Dealer', account: 'Green Corp', amount: 15000, date: '2026-03-19', stage: 'New', source: 'Cold Call', contact: '+971 50 123 4567', description: '' },
-        { id: 2, owner: 'Julia Hudda', name: 'Dealer', account: 'Eco Solutions', amount: 28000, date: '2026-04-01', stage: 'Qualification', source: 'Email', contact: '+971 55 234 5678', description: '' },
-        { id: 3, owner: 'Julia Hudda', name: 'Dealer', account: 'Solar Plus', amount: 45000, date: '2026-03-25', stage: 'Proposal', source: 'Website', contact: '+971 52 345 6789', description: '' },
-        { id: 4, owner: 'Julia Hudda', name: 'Dealer', account: 'Wind Energy LLC', amount: 62000, date: '2026-04-10', stage: 'Won', source: 'Referral', contact: '+971 56 456 7890', description: '' },
-        { id: 5, owner: 'Julia Hudda', name: 'Dealer', account: 'Bio Farms', amount: 8500, date: '2026-03-15', stage: 'Lost', source: 'Social Media', contact: '+971 50 567 8901', description: '' },
-        { id: 6, owner: 'Julia Hudda', name: 'Dealer', account: 'Clean Water Co', amount: 33000, date: '2026-04-05', stage: 'New', source: 'Cold Call', contact: '+971 55 678 9012', description: '' },
-        { id: 7, owner: 'Julia Hudda', name: 'Dealer', account: 'Recycle Tech', amount: 19000, date: '2026-03-28', stage: 'Negotiation', source: 'Advertisement', contact: '+971 52 789 0123', description: '' },
-        { id: 8, owner: 'Julia Hudda', name: 'Dealer', account: 'Green Build', amount: 71000, date: '2026-04-15', stage: 'Won', source: 'Referral', contact: '+971 56 890 1234', description: '' },
-        { id: 9, owner: 'Julia Hudda', name: 'Dealer', account: 'Eco Transport', amount: 12000, date: '2026-03-22', stage: 'New', source: 'Website', contact: '+971 50 901 2345', description: '' },
-        { id: 10, owner: 'Julia Hudda', name: 'Dealer', account: 'Nature Foods', amount: 25000, date: '2026-04-08', stage: 'Qualification', source: 'Email', contact: '+971 55 012 3456', description: '' },
+        { id: 1, owner: 'Rajesh Sharma', name: 'Solar Panel Supply', account: 'Tata Power Solar', amount: 1500000, date: '2026-03-19', stage: 'New', source: 'Cold Call', contact: '+91 98200 12345', description: 'Rooftop solar installation for commercial complex' },
+        { id: 2, owner: 'Rajesh Sharma', name: 'EV Charging Stations', account: 'Ather Energy', amount: 2800000, date: '2026-04-01', stage: 'Qualification', source: 'Email', contact: '+91 98450 23456', description: 'EV charging infrastructure setup' },
+        { id: 3, owner: 'Rajesh Sharma', name: 'Organic Fertilizer Contract', account: 'UPL Ltd', amount: 4500000, date: '2026-03-25', stage: 'Proposal', source: 'Website', contact: '+91 98765 34567', description: 'Bulk organic fertilizer supply for FY26-27' },
+        { id: 4, owner: 'Rajesh Sharma', name: 'Wind Turbine Maintenance', account: 'Suzlon Energy', amount: 6200000, date: '2026-04-10', stage: 'Won', source: 'Referral', contact: '+91 99200 45678', description: 'Annual maintenance contract for 50MW wind farm' },
+        { id: 5, owner: 'Rajesh Sharma', name: 'Drip Irrigation Setup', account: 'Jain Irrigation', amount: 850000, date: '2026-03-15', stage: 'Lost', source: 'Social Media', contact: '+91 98230 56789', description: 'Micro-irrigation system for 200 acres' },
+        { id: 6, owner: 'Rajesh Sharma', name: 'Water Purification Plant', account: 'VA Tech Wabag', amount: 3300000, date: '2026-04-05', stage: 'New', source: 'Cold Call', contact: '+91 98410 67890', description: 'Municipal water treatment plant project' },
+        { id: 7, owner: 'Priya Nair', name: 'Biogas Plant Installation', account: 'Praj Industries', amount: 1900000, date: '2026-03-28', stage: 'Negotiation', source: 'Advertisement', contact: '+91 98670 78901', description: 'Biogas plant for industrial waste processing' },
+        { id: 8, owner: 'Priya Nair', name: 'Green Building Materials', account: 'Godrej Properties', amount: 7100000, date: '2026-04-15', stage: 'Won', source: 'Referral', contact: '+91 98900 89012', description: 'Eco-friendly construction materials for new township' },
+        { id: 9, owner: 'Rajesh Sharma', name: 'Solar Water Heaters', account: 'Luminous Power', amount: 1200000, date: '2026-03-22', stage: 'New', source: 'Website', contact: '+91 98110 90123', description: 'Commercial solar water heating systems' },
+        { id: 10, owner: 'Priya Nair', name: 'Waste Management System', account: 'Ramky Enviro Engineers', amount: 2500000, date: '2026-04-08', stage: 'Qualification', source: 'Email', contact: '+91 98490 01234', description: 'Integrated solid waste management solution' },
     ],
     leads: [
-        { id: 1, name: 'Ahmad Al Rashid', company: 'Desert Solar LLC', email: 'ahmad@desertsolar.ae', phone: '+971 50 111 2222', source: 'Website', status: 'New', created: '2026-03-10' },
-        { id: 2, name: 'Fatima Hassan', company: 'Green Oasis', email: 'fatima@greenoasis.ae', phone: '+971 55 333 4444', source: 'Referral', status: 'Qualified', created: '2026-03-08' },
-        { id: 3, name: 'Omar Khalil', company: 'Eco Build Dubai', email: 'omar@ecobuild.ae', phone: '+971 52 555 6666', source: 'Cold Call', status: 'New', created: '2026-03-12' },
-        { id: 4, name: 'Sara Mohammed', company: 'Pure Water Systems', email: 'sara@purewater.ae', phone: '+971 56 777 8888', source: 'Email', status: 'Proposal', created: '2026-03-05' },
-        { id: 5, name: 'Khalid Ibrahim', company: 'Wind Power ME', email: 'khalid@windpowerme.ae', phone: '+971 50 999 0000', source: 'Social Media', status: 'Won', created: '2026-02-28' },
-        { id: 6, name: 'Layla Nasser', company: 'Organic Farms AE', email: 'layla@organicfarms.ae', phone: '+971 55 121 3434', source: 'Advertisement', status: 'Lost', created: '2026-03-01' },
-        { id: 7, name: 'Rashid Al Maktoum', company: 'Smart City Tech', email: 'rashid@smartcity.ae', phone: '+971 52 565 7878', source: 'Website', status: 'Qualified', created: '2026-03-11' },
-        { id: 8, name: 'Noura Bin Zayed', company: 'Clean Energy Hub', email: 'noura@cleanhub.ae', phone: '+971 56 909 1212', source: 'Referral', status: 'New', created: '2026-03-13' },
+        { id: 1, name: 'Vikram Patel', company: 'Adani Green Energy', email: 'vikram.patel@adanigreen.com', phone: '+91 79 2555 7100', source: 'Website', status: 'New', created: '2026-03-10' },
+        { id: 2, name: 'Ananya Krishnan', company: 'Amara Raja Energy', email: 'ananya.k@amararaja.com', phone: '+91 98480 33444', source: 'Referral', status: 'Qualified', created: '2026-03-08' },
+        { id: 3, name: 'Suresh Reddy', company: 'Greenko Group', email: 'suresh.reddy@greenko.net', phone: '+91 40 6720 2000', source: 'Cold Call', status: 'New', created: '2026-03-12' },
+        { id: 4, name: 'Meera Joshi', company: 'Thermax Ltd', email: 'meera.joshi@thermaxglobal.com', phone: '+91 20 2542 1000', source: 'Email', status: 'Proposal', created: '2026-03-05' },
+        { id: 5, name: 'Arjun Menon', company: 'TATA Power', email: 'arjun.menon@tatapower.com', phone: '+91 22 6665 8282', source: 'Social Media', status: 'Won', created: '2026-02-28' },
+        { id: 6, name: 'Deepika Rao', company: 'ReNew Power', email: 'deepika.rao@renewpower.in', phone: '+91 124 481 1111', source: 'Advertisement', status: 'Lost', created: '2026-03-01' },
+        { id: 7, name: 'Karthik Iyer', company: 'Sterling and Wilson', email: 'karthik.iyer@sterlingandwilson.com', phone: '+91 22 4343 4343', source: 'Website', status: 'Qualified', created: '2026-03-11' },
+        { id: 8, name: 'Neha Gupta', company: 'Azure Power', email: 'neha.gupta@azurepower.com', phone: '+91 11 4940 9800', source: 'Referral', status: 'New', created: '2026-03-13' },
     ],
     contacts: [
-        { id: 1, name: 'Ahmad Al Rashid', email: 'ahmad@desertsolar.ae', phone: '+971 50 111 2222', company: 'Desert Solar LLC', position: 'CEO', status: 'Active' },
-        { id: 2, name: 'Fatima Hassan', email: 'fatima@greenoasis.ae', phone: '+971 55 333 4444', company: 'Green Oasis', position: 'Director', status: 'Active' },
-        { id: 3, name: 'Omar Khalil', email: 'omar@ecobuild.ae', phone: '+971 52 555 6666', company: 'Eco Build Dubai', position: 'Manager', status: 'Active' },
-        { id: 4, name: 'Sara Mohammed', email: 'sara@purewater.ae', phone: '+971 56 777 8888', company: 'Pure Water Systems', position: 'VP Sales', status: 'Inactive' },
-        { id: 5, name: 'Khalid Ibrahim', email: 'khalid@windpowerme.ae', phone: '+971 50 999 0000', company: 'Wind Power ME', position: 'CTO', status: 'Active' },
-        { id: 6, name: 'Layla Nasser', email: 'layla@organicfarms.ae', phone: '+971 55 121 3434', company: 'Organic Farms AE', position: 'Owner', status: 'Active' },
+        { id: 1, name: 'Vikram Patel', email: 'vikram.patel@adanigreen.com', phone: '+91 79 2555 7100', company: 'Adani Green Energy', position: 'CEO', status: 'Active' },
+        { id: 2, name: 'Ananya Krishnan', email: 'ananya.k@amararaja.com', phone: '+91 98480 33444', company: 'Amara Raja Energy', position: 'Director', status: 'Active' },
+        { id: 3, name: 'Suresh Reddy', email: 'suresh.reddy@greenko.net', phone: '+91 40 6720 2000', company: 'Greenko Group', position: 'Manager', status: 'Active' },
+        { id: 4, name: 'Meera Joshi', email: 'meera.joshi@thermaxglobal.com', phone: '+91 20 2542 1000', company: 'Thermax Ltd', position: 'VP Sales', status: 'Inactive' },
+        { id: 5, name: 'Arjun Menon', email: 'arjun.menon@tatapower.com', phone: '+91 22 6665 8282', company: 'TATA Power', position: 'CTO', status: 'Active' },
+        { id: 6, name: 'Deepika Rao', email: 'deepika.rao@renewpower.in', phone: '+91 124 481 1111', company: 'ReNew Power', position: 'Owner', status: 'Active' },
     ],
     accounts: [
-        { id: 1, name: 'Desert Solar LLC', industry: 'Solar Energy', phone: '+971 4 111 2222', website: 'desertsolar.ae', owner: 'Julia Hudda', status: 'Active', revenue: 1200000 },
-        { id: 2, name: 'Green Oasis', industry: 'Agriculture', phone: '+971 4 333 4444', website: 'greenoasis.ae', owner: 'Julia Hudda', status: 'Active', revenue: 850000 },
-        { id: 3, name: 'Eco Build Dubai', industry: 'Construction', phone: '+971 4 555 6666', website: 'ecobuild.ae', owner: 'Julia Hudda', status: 'Active', revenue: 3200000 },
-        { id: 4, name: 'Pure Water Systems', industry: 'Water Treatment', phone: '+971 4 777 8888', website: 'purewater.ae', owner: 'Julia Hudda', status: 'Inactive', revenue: 640000 },
-        { id: 5, name: 'Wind Power ME', industry: 'Wind Energy', phone: '+971 4 999 0000', website: 'windpowerme.ae', owner: 'Julia Hudda', status: 'Active', revenue: 5100000 },
+        { id: 1, name: 'Tata Power Solar', industry: 'Solar Energy', phone: '+91 22 6665 8282', website: 'tatapowersolar.com', owner: 'Rajesh Sharma', status: 'Active', revenue: 12000000 },
+        { id: 2, name: 'Jain Irrigation', industry: 'Agriculture', phone: '+91 257 225 8011', website: 'jains.com', owner: 'Rajesh Sharma', status: 'Active', revenue: 8500000 },
+        { id: 3, name: 'Godrej Properties', industry: 'Construction', phone: '+91 22 6169 8500', website: 'godrejproperties.com', owner: 'Rajesh Sharma', status: 'Active', revenue: 32000000 },
+        { id: 4, name: 'VA Tech Wabag', industry: 'Water Treatment', phone: '+91 44 2232 0807', website: 'wabag.com', owner: 'Priya Nair', status: 'Inactive', revenue: 6400000 },
+        { id: 5, name: 'Suzlon Energy', industry: 'Wind Energy', phone: '+91 20 6702 2000', website: 'suzlon.com', owner: 'Rajesh Sharma', status: 'Active', revenue: 51000000 },
     ],
     tasks: [
-        { id: 1, subject: 'Follow up with Ahmad', dueDate: '2026-03-15', priority: 'High', status: 'Pending', assignedTo: 'Julia Hudda', description: '' },
-        { id: 2, subject: 'Send proposal to Green Oasis', dueDate: '2026-03-16', priority: 'Medium', status: 'Completed', assignedTo: 'Julia Hudda', description: '' },
-        { id: 3, subject: 'Review contract terms', dueDate: '2026-03-18', priority: 'High', status: 'Pending', assignedTo: 'Julia Hudda', description: '' },
-        { id: 4, subject: 'Schedule site visit', dueDate: '2026-03-20', priority: 'Low', status: 'Pending', assignedTo: 'Julia Hudda', description: '' },
-        { id: 5, subject: 'Update CRM records', dueDate: '2026-03-14', priority: 'Medium', status: 'Completed', assignedTo: 'Julia Hudda', description: '' },
+        { id: 1, subject: 'Follow up with Vikram Patel at Adani Green', dueDate: '2026-03-15', priority: 'High', status: 'Pending', assignedTo: 'Rajesh Sharma', description: '' },
+        { id: 2, subject: 'Send proposal to Jain Irrigation', dueDate: '2026-03-16', priority: 'Medium', status: 'Completed', assignedTo: 'Rajesh Sharma', description: '' },
+        { id: 3, subject: 'Review Suzlon maintenance contract terms', dueDate: '2026-03-18', priority: 'High', status: 'Pending', assignedTo: 'Rajesh Sharma', description: '' },
+        { id: 4, subject: 'Schedule site visit to Godrej township', dueDate: '2026-03-20', priority: 'Low', status: 'Pending', assignedTo: 'Priya Nair', description: '' },
+        { id: 5, subject: 'Update CRM records for Q1', dueDate: '2026-03-14', priority: 'Medium', status: 'Completed', assignedTo: 'Priya Nair', description: '' },
     ],
     meetings: [
-        { id: 1, title: 'Q1 Sales Review', date: '2026-03-15', time: '10:00', location: 'Conference Room A', attendees: 'Julia, Ahmad, Sara', status: 'Scheduled', notes: '' },
-        { id: 2, title: 'Product Demo - Eco Build', date: '2026-03-16', time: '14:00', location: 'Client Office', attendees: 'Julia, Omar', status: 'Scheduled', notes: '' },
-        { id: 3, title: 'Partnership Discussion', date: '2026-03-18', time: '11:00', location: 'Virtual - Zoom', attendees: 'Julia, Khalid, Fatima', status: 'Completed', notes: '' },
-        { id: 4, title: 'Budget Planning', date: '2026-03-20', time: '09:00', location: 'Board Room', attendees: 'Julia, Management', status: 'Scheduled', notes: '' },
+        { id: 1, title: 'Q1 Sales Review', date: '2026-03-15', time: '10:00', location: 'Conference Room A', attendees: 'Rajesh, Vikram, Meera', status: 'Scheduled', notes: '' },
+        { id: 2, title: 'Product Demo - Godrej Properties', date: '2026-03-16', time: '14:00', location: 'Client Office, Mumbai', attendees: 'Priya, Suresh', status: 'Scheduled', notes: '' },
+        { id: 3, title: 'Partnership Discussion - Suzlon', date: '2026-03-18', time: '11:00', location: 'Virtual - Google Meet', attendees: 'Rajesh, Arjun, Ananya', status: 'Completed', notes: '' },
+        { id: 4, title: 'Budget Planning FY26-27', date: '2026-03-20', time: '09:00', location: 'Board Room', attendees: 'Rajesh, Management', status: 'Scheduled', notes: '' },
     ],
     calls: [
-        { id: 1, contact: 'Ahmad Al Rashid', date: '2026-03-14', time: '09:30', duration: '15', type: 'Outbound', notes: 'Discussed pricing options', status: 'Completed' },
-        { id: 2, contact: 'Fatima Hassan', date: '2026-03-14', time: '11:00', duration: '25', type: 'Inbound', notes: 'Follow-up on proposal', status: 'Completed' },
-        { id: 3, contact: 'Omar Khalil', date: '2026-03-15', time: '10:00', duration: '', type: 'Outbound', notes: 'Schedule product demo', status: 'Scheduled' },
-        { id: 4, contact: 'Sara Mohammed', date: '2026-03-15', time: '14:30', duration: '', type: 'Outbound', notes: 'Contract negotiation', status: 'Scheduled' },
+        { id: 1, contact: 'Vikram Patel', date: '2026-03-14', time: '09:30', duration: '15', type: 'Outbound', notes: 'Discussed solar panel pricing', status: 'Completed' },
+        { id: 2, contact: 'Ananya Krishnan', date: '2026-03-14', time: '11:00', duration: '25', type: 'Inbound', notes: 'Follow-up on battery storage proposal', status: 'Completed' },
+        { id: 3, contact: 'Suresh Reddy', date: '2026-03-15', time: '10:00', duration: '', type: 'Outbound', notes: 'Schedule renewable energy demo', status: 'Scheduled' },
+        { id: 4, contact: 'Meera Joshi', date: '2026-03-15', time: '14:30', duration: '', type: 'Outbound', notes: 'Thermax contract negotiation', status: 'Scheduled' },
     ],
     pendingOrders: [
-        { id: 'ORD-001', customer: 'Desert Solar LLC', items: 'Solar Panels x50', amount: 125000, date: '2026-03-10', status: 'Pending' },
-        { id: 'ORD-002', customer: 'Green Oasis', items: 'Irrigation Systems x10', amount: 45000, date: '2026-03-11', status: 'Processing' },
-        { id: 'ORD-003', customer: 'Eco Build Dubai', items: 'Green Insulation x200', amount: 68000, date: '2026-03-12', status: 'Pending' },
+        { id: 'ORD-001', customer: 'Tata Power Solar', items: 'Solar Panels x50', amount: 1250000, date: '2026-03-10', status: 'Pending' },
+        { id: 'ORD-002', customer: 'Jain Irrigation', items: 'Drip Systems x100', amount: 450000, date: '2026-03-11', status: 'Processing' },
+        { id: 'ORD-003', customer: 'Godrej Properties', items: 'Green Insulation x200', amount: 680000, date: '2026-03-12', status: 'Pending' },
     ],
     shippedOrders: [
-        { id: 'ORD-098', customer: 'Wind Power ME', items: 'Turbine Components x5', amount: 310000, date: '2026-03-05', trackingNo: 'TRK-887766', status: 'Delivered' },
-        { id: 'ORD-097', customer: 'Pure Water Systems', items: 'Filters x100', amount: 18000, date: '2026-03-03', trackingNo: 'TRK-776655', status: 'In Transit' },
-        { id: 'ORD-096', customer: 'Organic Farms AE', items: 'Seeds & Fertilizer', amount: 5200, date: '2026-03-01', trackingNo: 'TRK-665544', status: 'Delivered' },
+        { id: 'ORD-098', customer: 'Suzlon Energy', items: 'Turbine Components x5', amount: 3100000, date: '2026-03-05', trackingNo: 'TRK-887766', status: 'Delivered' },
+        { id: 'ORD-097', customer: 'VA Tech Wabag', items: 'Filters x100', amount: 180000, date: '2026-03-03', trackingNo: 'TRK-776655', status: 'In Transit' },
+        { id: 'ORD-096', customer: 'UPL Ltd', items: 'Organic Fertilizer 10MT', amount: 520000, date: '2026-03-01', trackingNo: 'TRK-665544', status: 'Delivered' },
     ],
     invoices: [
-        { id: 'INV-001', client: 'Desert Solar LLC', amount: 125000, date: '2026-03-10', dueDate: '2026-04-10', status: 'Pending', notes: '' },
-        { id: 'INV-002', client: 'Wind Power ME', amount: 310000, date: '2026-03-05', dueDate: '2026-04-05', status: 'Paid', notes: '' },
-        { id: 'INV-003', client: 'Green Oasis', amount: 45000, date: '2026-03-11', dueDate: '2026-04-11', status: 'Pending', notes: '' },
-        { id: 'INV-004', client: 'Eco Build Dubai', amount: 68000, date: '2026-02-15', dueDate: '2026-03-15', status: 'Overdue', notes: '' },
+        { id: 'INV-001', client: 'Tata Power Solar', amount: 1250000, date: '2026-03-10', dueDate: '2026-04-10', status: 'Pending', notes: '' },
+        { id: 'INV-002', client: 'Suzlon Energy', amount: 3100000, date: '2026-03-05', dueDate: '2026-04-05', status: 'Paid', notes: '' },
+        { id: 'INV-003', client: 'Jain Irrigation', amount: 450000, date: '2026-03-11', dueDate: '2026-04-11', status: 'Pending', notes: '' },
+        { id: 'INV-004', client: 'Godrej Properties', amount: 680000, date: '2026-02-15', dueDate: '2026-03-15', status: 'Overdue', notes: '' },
     ],
     payments: [
-        { id: 'PAY-001', invoice: 'INV-002', client: 'Wind Power ME', amount: 310000, date: '2026-03-08', method: 'Bank Transfer', status: 'Paid' },
-        { id: 'PAY-002', invoice: 'INV-001', client: 'Desert Solar LLC', amount: 62500, date: '2026-03-12', method: 'Cheque', status: 'Paid' },
+        { id: 'PAY-001', invoice: 'INV-002', client: 'Suzlon Energy', amount: 3100000, date: '2026-03-08', method: 'Bank Transfer', status: 'Paid' },
+        { id: 'PAY-002', invoice: 'INV-001', client: 'Tata Power Solar', amount: 625000, date: '2026-03-12', method: 'Cheque', status: 'Paid' },
     ],
     expenses: [
-        { id: 1, category: 'Travel', description: 'Client visit - Abu Dhabi', amount: 1200, date: '2026-03-10', status: 'Approved' },
-        { id: 2, category: 'Marketing', description: 'Social media ads', amount: 3500, date: '2026-03-08', status: 'Approved' },
-        { id: 3, category: 'Office', description: 'Supplies and equipment', amount: 850, date: '2026-03-12', status: 'Pending' },
+        { id: 1, category: 'Travel', description: 'Client visit - Pune (Suzlon)', amount: 12000, date: '2026-03-10', status: 'Approved' },
+        { id: 2, category: 'Marketing', description: 'LinkedIn & Google Ads', amount: 35000, date: '2026-03-08', status: 'Approved' },
+        { id: 3, category: 'Office', description: 'Supplies and equipment', amount: 8500, date: '2026-03-12', status: 'Pending' },
     ],
     users: [
-        { id: 1, name: 'Julia Hudda', email: 'julia.hudda@greengrowth.ae', role: 'Admin', department: 'Sales', status: 'Active' },
-        { id: 2, name: 'Ahmad Al Rashid', email: 'ahmad@greengrowth.ae', role: 'Sales Rep', department: 'Sales', status: 'Active' },
-        { id: 3, name: 'Fatima Hassan', email: 'fatima@greengrowth.ae', role: 'Marketing', department: 'Marketing', status: 'Active' },
+        { id: 1, name: 'Rajesh Sharma', email: 'rajesh.sharma@greengrowth.in', role: 'Admin', department: 'Sales', status: 'Active' },
+        { id: 2, name: 'Priya Nair', email: 'priya.nair@greengrowth.in', role: 'Sales Rep', department: 'Sales', status: 'Active' },
+        { id: 3, name: 'Amit Verma', email: 'amit.verma@greengrowth.in', role: 'Marketing', department: 'Marketing', status: 'Active' },
     ],
     campaigns: [
-        { id: 1, name: 'Q1 Email Blast', type: 'Email', status: 'Active', startDate: '2026-01-15', budget: 5000, leads: 120 },
-        { id: 2, name: 'Social Media Push', type: 'Social', status: 'Active', startDate: '2026-02-01', budget: 8000, leads: 185 },
-        { id: 3, name: 'Trade Show - WETEX', type: 'Event', status: 'Planned', startDate: '2026-04-10', budget: 25000, leads: 0 },
-        { id: 4, name: 'Google Ads Campaign', type: 'PPC', status: 'Active', startDate: '2026-03-01', budget: 12000, leads: 37 },
+        { id: 1, name: 'Q1 Email Blast', type: 'Email', status: 'Active', startDate: '2026-01-15', budget: 50000, leads: 120 },
+        { id: 2, name: 'LinkedIn Campaign', type: 'Social', status: 'Active', startDate: '2026-02-01', budget: 80000, leads: 185 },
+        { id: 3, name: 'REI Expo 2026', type: 'Event', status: 'Planned', startDate: '2026-04-10', budget: 250000, leads: 0 },
+        { id: 4, name: 'Google Ads - Solar', type: 'PPC', status: 'Active', startDate: '2026-03-01', budget: 120000, leads: 37 },
     ],
     attendance: [
-        { id: 1, employee: 'Julia Hudda', date: '2026-03-14', checkIn: '09:00', checkOut: '18:00', hours: '9h', status: 'Present' },
-        { id: 2, employee: 'Ahmad Al Rashid', date: '2026-03-14', checkIn: '09:15', checkOut: '18:00', hours: '8h 45m', status: 'Late' },
-        { id: 3, employee: 'Fatima Hassan', date: '2026-03-14', checkIn: '08:55', checkOut: '17:30', hours: '8h 35m', status: 'Present' },
-        { id: 4, employee: 'Omar Khalil', date: '2026-03-14', checkIn: '', checkOut: '', hours: '', status: 'Absent' },
-        { id: 5, employee: 'Sara Mohammed', date: '2026-03-14', checkIn: '', checkOut: '', hours: '', status: 'On Leave' },
+        { id: 1, employee: 'Rajesh Sharma', date: '2026-03-14', checkIn: '09:00', checkOut: '18:00', hours: '9h', status: 'Present' },
+        { id: 2, employee: 'Priya Nair', date: '2026-03-14', checkIn: '09:15', checkOut: '18:00', hours: '8h 45m', status: 'Late' },
+        { id: 3, employee: 'Amit Verma', date: '2026-03-14', checkIn: '08:55', checkOut: '17:30', hours: '8h 35m', status: 'Present' },
+        { id: 4, employee: 'Suresh Reddy', date: '2026-03-14', checkIn: '', checkOut: '', hours: '', status: 'Absent' },
+        { id: 5, employee: 'Meera Joshi', date: '2026-03-14', checkIn: '', checkOut: '', hours: '', status: 'On Leave' },
     ],
     profile: {
-        name: 'Julia Hudda', email: 'julia.hudda@greengrowth.ae', phone: '+971 50 123 4567', role: 'Sales Manager', department: 'Sales'
+        name: 'Rajesh Sharma', email: 'rajesh.sharma@greengrowth.in', phone: '+91 98200 12345', role: 'Sales Manager', department: 'Sales'
     },
     company: {
-        name: 'Green Growth', industry: 'Sustainable Energy & Agriculture', address: 'Business Bay, Dubai, UAE', phone: '+971 4 123 4567', website: 'www.greengrowth.ae'
+        name: 'Green Growth', industry: 'Sustainable Energy & Agriculture', address: 'Bandra Kurla Complex, Mumbai, Maharashtra', phone: '+91 22 4123 4567', website: 'www.greengrowth.in'
     },
     activityLog: []
 };
@@ -146,9 +146,9 @@ let AppData = loadData();
 // Login System
 // ==========================================
 const USERS = [
-    { name: 'Julia Hudda', role: 'Admin', pin: '1234' },
-    { name: 'Ahmad Al Rashid', role: 'Sales Rep', pin: '1234' },
-    { name: 'Fatima Hassan', role: 'Marketing', pin: '1234' },
+    { name: 'Rajesh Sharma', role: 'Admin', pin: '1234' },
+    { name: 'Priya Nair', role: 'Sales Rep', pin: '1234' },
+    { name: 'Amit Verma', role: 'Marketing', pin: '1234' },
 ];
 
 let loggedInUser = null;
@@ -326,7 +326,7 @@ document.getElementById('globalSearch').addEventListener('input', function() {
     let resultsHtml = '';
     if (q.length >= 2) {
         const results = [];
-        AppData.deals.forEach(d => { if ((d.name + ' ' + d.account + ' ' + d.owner).toLowerCase().includes(q)) results.push({ title: d.account + ' - ' + d.name, sub: 'Deal - AED ' + d.amount.toLocaleString(), page: 'deals', icon: 'fa-handshake', bg: '#e8f5e9', color: '#2e7d32' }); });
+        AppData.deals.forEach(d => { if ((d.name + ' ' + d.account + ' ' + d.owner).toLowerCase().includes(q)) results.push({ title: d.account + ' - ' + d.name, sub: 'Deal - ₹' + d.amount.toLocaleString(), page: 'deals', icon: 'fa-handshake', bg: '#e8f5e9', color: '#2e7d32' }); });
         AppData.leads.forEach(l => { if ((l.name + ' ' + l.company + ' ' + l.email).toLowerCase().includes(q)) results.push({ title: l.name, sub: 'Lead - ' + l.company, page: 'leads', icon: 'fa-users', bg: '#e3f2fd', color: '#1565c0' }); });
         AppData.contacts.forEach(c => { if ((c.name + ' ' + c.company + ' ' + c.email).toLowerCase().includes(q)) results.push({ title: c.name, sub: 'Contact - ' + c.company, page: 'contacts', icon: 'fa-address-book', bg: '#ede7f6', color: '#673ab7' }); });
         AppData.accounts.forEach(a => { if ((a.name + ' ' + a.industry).toLowerCase().includes(q)) results.push({ title: a.name, sub: 'Account - ' + a.industry, page: 'accounts', icon: 'fa-building', bg: '#fff3e0', color: '#ef6c00' }); });
@@ -434,7 +434,7 @@ function buildForm(fields, data) {
 function buildDetail(fields, data) {
     return '<div class="detail-grid">' + fields.map(f => {
         let val = data[f.key] !== undefined ? data[f.key] : '';
-        if (f.key === 'amount' || f.key === 'revenue' || f.key === 'budget') val = 'AED ' + Number(val).toLocaleString();
+        if (f.key === 'amount' || f.key === 'revenue' || f.key === 'budget') val = '₹' + Number(val).toLocaleString();
         return '<div class="detail-row"><div class="detail-label">' + f.label + '</div><div class="detail-value">' + val + '</div></div>';
     }).join('') + '</div>';
 }
@@ -580,7 +580,7 @@ function bindPageEvents(page) {
 // ==========================================
 const FIELDS = {
     deals: [
-        { key: 'owner', label: 'Deal Owner', default: 'Julia Hudda' },
+        { key: 'owner', label: 'Deal Owner', default: 'Rajesh Sharma' },
         { key: 'name', label: 'Deal Name', required: true },
         { key: 'account', label: 'Account Name' },
         { key: 'amount', label: 'Amount', type: 'number' },
@@ -612,7 +612,7 @@ const FIELDS = {
         { key: 'industry', label: 'Industry', type: 'select', options: ['Solar Energy','Agriculture','Construction','Water Treatment','Wind Energy','Technology','Other'] },
         { key: 'phone', label: 'Phone', type: 'tel' },
         { key: 'website', label: 'Website' },
-        { key: 'owner', label: 'Owner', default: 'Julia Hudda' },
+        { key: 'owner', label: 'Owner', default: 'Rajesh Sharma' },
         { key: 'revenue', label: 'Annual Revenue', type: 'number' },
         { key: 'status', label: 'Status', type: 'select', options: ['Active','Inactive'] },
     ],
@@ -621,7 +621,7 @@ const FIELDS = {
         { key: 'dueDate', label: 'Due Date', type: 'date' },
         { key: 'priority', label: 'Priority', type: 'select', options: ['High','Medium','Low'] },
         { key: 'status', label: 'Status', type: 'select', options: ['Pending','In Progress','Completed'] },
-        { key: 'assignedTo', label: 'Assigned To', default: 'Julia Hudda' },
+        { key: 'assignedTo', label: 'Assigned To', default: 'Rajesh Sharma' },
         { key: 'description', label: 'Description', type: 'textarea' },
     ],
     meetings: [
@@ -847,7 +847,7 @@ function renderDashboard() {
         '<div class="stat-cards">' +
         '<div class="stat-card green"><div class="stat-info"><h4>Total Deals</h4><div class="stat-number">' + totalDeals + '</div></div><div class="stat-icon"><i class="fa-solid fa-handshake"></i></div></div>' +
         '<div class="stat-card purple"><div class="stat-info"><h4>Won Deals</h4><div class="stat-number">' + wonDeals + '</div></div><div class="stat-icon"><i class="fa-solid fa-trophy"></i></div></div>' +
-        '<div class="stat-card pink"><div class="stat-info"><h4>Total Revenue</h4><div class="stat-number">AED ' + totalRevenue.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-coins"></i></div></div>' +
+        '<div class="stat-card pink"><div class="stat-info"><h4>Total Revenue</h4><div class="stat-number">₹' + totalRevenue.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-coins"></i></div></div>' +
         '<div class="stat-card orange"><div class="stat-info"><h4>Pending Tasks</h4><div class="stat-number">' + pendingTasks + '</div></div><div class="stat-icon"><i class="fa-solid fa-clock"></i></div></div>' +
         '</div>' +
         '<div class="dashboard-grid">' +
@@ -860,10 +860,10 @@ function renderDashboard() {
         '<div class="dashboard-card"><h3>Deal Pipeline</h3>' + chartBars + '</div>' +
         '<div class="dashboard-card"><h3>Recent Activities</h3><ul class="activity-list">' + activityHtml + '</ul></div>' +
         '<div class="dashboard-card"><h3>Financial Summary</h3><div class="mini-stat-grid">' +
-        '<div class="mini-stat"><div class="value" style="color:#4caf50">AED ' + paidInvoices.toLocaleString() + '</div><div class="label">Paid Invoices</div></div>' +
-        '<div class="mini-stat"><div class="value" style="color:#ff9800">AED ' + pendingInvoices.toLocaleString() + '</div><div class="label">Outstanding</div></div>' +
-        '<div class="mini-stat"><div class="value" style="color:#e91e63">AED ' + totalExpenses.toLocaleString() + '</div><div class="label">Expenses</div></div>' +
-        '<div class="mini-stat"><div class="value" style="color:#1a5c2e">AED ' + (paidInvoices - totalExpenses).toLocaleString() + '</div><div class="label">Net Profit</div></div>' +
+        '<div class="mini-stat"><div class="value" style="color:#4caf50">₹' + paidInvoices.toLocaleString() + '</div><div class="label">Paid Invoices</div></div>' +
+        '<div class="mini-stat"><div class="value" style="color:#ff9800">₹' + pendingInvoices.toLocaleString() + '</div><div class="label">Outstanding</div></div>' +
+        '<div class="mini-stat"><div class="value" style="color:#e91e63">₹' + totalExpenses.toLocaleString() + '</div><div class="label">Expenses</div></div>' +
+        '<div class="mini-stat"><div class="value" style="color:#1a5c2e">₹' + (paidInvoices - totalExpenses).toLocaleString() + '</div><div class="label">Net Profit</div></div>' +
         '</div></div>' +
         '<div class="dashboard-card"><h3>Upcoming Tasks</h3><ul class="activity-list">' +
         AppData.tasks.filter(t => t.status === 'Pending').slice(0, 5).map(t =>
@@ -905,7 +905,7 @@ function renderDeals() {
     const lostLeads = AppData.deals.filter(d => d.stage === 'Lost').length;
 
     let rows = pg.items.map(d =>
-        '<tr><td>' + d.owner + '</td><td>' + d.name + '</td><td>' + d.account + '</td><td>AED ' + Number(d.amount).toLocaleString() + '</td><td><span class="status-badge ' + d.stage.toLowerCase() + '">' + d.stage + '</span></td><td>' + d.date + '</td><td><div class="action-btns">' +
+        '<tr><td>' + d.owner + '</td><td>' + d.name + '</td><td>' + d.account + '</td><td>₹' + Number(d.amount).toLocaleString() + '</td><td><span class="status-badge ' + d.stage.toLowerCase() + '">' + d.stage + '</span></td><td>' + d.date + '</td><td><div class="action-btns">' +
         '<button class="action-btn view" onclick="crudView(\'Deal\',FIELDS.deals,' + JSON.stringify(d).replace(/'/g, "\\'").replace(/"/g, '&quot;') + ')"><i class="fa-solid fa-eye"></i></button>' +
         '<button class="action-btn edit" onclick="crudEdit(\'deals\',\'Deal\',FIELDS.deals,' + d.id + ')"><i class="fa-solid fa-pen"></i></button>' +
         '<button class="action-btn delete" onclick="crudDelete(\'deals\',\'Deal\',' + d.id + ')"><i class="fa-solid fa-trash"></i></button>' +
@@ -996,7 +996,7 @@ function renderAccounts() {
     const data = filterAndSort(AppData.accounts, cols);
     const pg = paginate(data);
     let rows = pg.items.map(a =>
-        '<tr><td>' + a.name + '</td><td>' + a.industry + '</td><td>' + a.phone + '</td><td>' + a.website + '</td><td>' + a.owner + '</td><td>AED ' + Number(a.revenue).toLocaleString() + '</td><td><span class="status-badge ' + a.status.toLowerCase() + '">' + a.status + '</span></td><td><div class="action-btns">' +
+        '<tr><td>' + a.name + '</td><td>' + a.industry + '</td><td>' + a.phone + '</td><td>' + a.website + '</td><td>' + a.owner + '</td><td>₹' + Number(a.revenue).toLocaleString() + '</td><td><span class="status-badge ' + a.status.toLowerCase() + '">' + a.status + '</span></td><td><div class="action-btns">' +
         '<button class="action-btn view" onclick="crudView(\'Account\',FIELDS.accounts,AppData.accounts.find(x=>x.id===' + a.id + '))"><i class="fa-solid fa-eye"></i></button>' +
         '<button class="action-btn edit" onclick="crudEdit(\'accounts\',\'Account\',FIELDS.accounts,' + a.id + ')"><i class="fa-solid fa-pen"></i></button>' +
         '<button class="action-btn delete" onclick="crudDelete(\'accounts\',\'Account\',' + a.id + ')"><i class="fa-solid fa-trash"></i></button>' +
@@ -1026,14 +1026,14 @@ function renderForecast() {
         const amt = AppData.deals.filter(d => d.stage === s).reduce((sum, d) => sum + (parseFloat(d.amount) || 0), 0);
         const count = AppData.deals.filter(d => d.stage === s).length;
         const pct = totalPipeline > 0 ? Math.round((amt / totalPipeline) * 100) : 0;
-        return '<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span style="width:100px;font-size:13px;font-weight:600;color:#495057">' + s + '</span><div style="flex:1;background:#f1f3f5;border-radius:4px;height:30px;overflow:hidden"><div style="width:' + Math.max(pct, 2) + '%;background:' + stageColors[i] + ';height:100%;border-radius:4px;display:flex;align-items:center;padding-left:10px;color:white;font-size:12px;font-weight:600">AED ' + amt.toLocaleString() + '</div></div><span style="width:60px;text-align:right;font-size:12px;color:#6c757d">' + count + ' deals</span></div>';
+        return '<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span style="width:100px;font-size:13px;font-weight:600;color:#495057">' + s + '</span><div style="flex:1;background:#f1f3f5;border-radius:4px;height:30px;overflow:hidden"><div style="width:' + Math.max(pct, 2) + '%;background:' + stageColors[i] + ';height:100%;border-radius:4px;display:flex;align-items:center;padding-left:10px;color:white;font-size:12px;font-weight:600">₹' + amt.toLocaleString() + '</div></div><span style="width:60px;text-align:right;font-size:12px;color:#6c757d">' + count + ' deals</span></div>';
     }).join('');
 
     return '<div class="page-header"><h1 class="page-title">FORECAST</h1></div>' +
         '<div class="stat-cards">' +
-        '<div class="stat-card green"><div class="stat-info"><h4>Total Pipeline</h4><div class="stat-number">AED ' + totalPipeline.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-chart-pie"></i></div></div>' +
-        '<div class="stat-card purple"><div class="stat-info"><h4>Won Revenue</h4><div class="stat-number">AED ' + wonAmount.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-sack-dollar"></i></div></div>' +
-        '<div class="stat-card orange"><div class="stat-info"><h4>Open Pipeline</h4><div class="stat-number">AED ' + openAmount.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-hourglass-half"></i></div></div>' +
+        '<div class="stat-card green"><div class="stat-info"><h4>Total Pipeline</h4><div class="stat-number">₹' + totalPipeline.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-chart-pie"></i></div></div>' +
+        '<div class="stat-card purple"><div class="stat-info"><h4>Won Revenue</h4><div class="stat-number">₹' + wonAmount.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-sack-dollar"></i></div></div>' +
+        '<div class="stat-card orange"><div class="stat-info"><h4>Open Pipeline</h4><div class="stat-number">₹' + openAmount.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-hourglass-half"></i></div></div>' +
         '<div class="stat-card pink"><div class="stat-info"><h4>Win Rate</h4><div class="stat-number">' + winRate + '%</div></div><div class="stat-icon"><i class="fa-solid fa-percent"></i></div></div>' +
         '</div>' +
         '<div class="dashboard-card"><h3>Pipeline by Stage</h3>' + forecastBars + '</div>';
@@ -1054,7 +1054,7 @@ function renderCampaign() {
     const totalCampaignLeads = AppData.campaigns.reduce((s, c) => s + (parseInt(c.leads) || 0), 0);
 
     let rows = pg.items.map(c =>
-        '<tr><td>' + c.name + '</td><td>' + c.type + '</td><td><span class="status-badge ' + (c.status === 'Active' ? 'active' : c.status === 'Planned' ? 'pending' : 'completed') + '">' + c.status + '</span></td><td>' + c.startDate + '</td><td>AED ' + Number(c.budget).toLocaleString() + '</td><td>' + c.leads + '</td><td><div class="action-btns">' +
+        '<tr><td>' + c.name + '</td><td>' + c.type + '</td><td><span class="status-badge ' + (c.status === 'Active' ? 'active' : c.status === 'Planned' ? 'pending' : 'completed') + '">' + c.status + '</span></td><td>' + c.startDate + '</td><td>₹' + Number(c.budget).toLocaleString() + '</td><td>' + c.leads + '</td><td><div class="action-btns">' +
         '<button class="action-btn view" onclick="crudView(\'Campaign\',FIELDS.campaigns,AppData.campaigns.find(x=>x.id===' + c.id + '))"><i class="fa-solid fa-eye"></i></button>' +
         '<button class="action-btn edit" onclick="crudEdit(\'campaigns\',\'Campaign\',FIELDS.campaigns,' + c.id + ')"><i class="fa-solid fa-pen"></i></button>' +
         '<button class="action-btn delete" onclick="crudDelete(\'campaigns\',\'Campaign\',' + c.id + ')"><i class="fa-solid fa-trash"></i></button>' +
@@ -1064,7 +1064,7 @@ function renderCampaign() {
     return '<div class="page-header"><h1 class="page-title">CAMPAIGNS</h1><button class="btn btn-primary" onclick="crudCreate(\'campaigns\',\'Campaign\',FIELDS.campaigns)">Create Campaign</button></div>' +
         '<div class="stat-cards">' +
         '<div class="stat-card green"><div class="stat-info"><h4>Active Campaigns</h4><div class="stat-number">' + activeCampaigns + '</div></div><div class="stat-icon"><i class="fa-solid fa-bullhorn"></i></div></div>' +
-        '<div class="stat-card purple"><div class="stat-info"><h4>Total Budget</h4><div class="stat-number">AED ' + totalBudget.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-wallet"></i></div></div>' +
+        '<div class="stat-card purple"><div class="stat-info"><h4>Total Budget</h4><div class="stat-number">₹' + totalBudget.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-wallet"></i></div></div>' +
         '<div class="stat-card pink"><div class="stat-info"><h4>Total Leads</h4><div class="stat-number">' + totalCampaignLeads + '</div></div><div class="stat-icon"><i class="fa-solid fa-arrow-trend-up"></i></div></div>' +
         '</div>' +
         '<div class="table-toolbar"><div class="toolbar-actions"><button class="btn btn-sm btn-outline" onclick="exportTable(\'copy\')">Copy</button><button class="btn btn-sm btn-outline" onclick="exportTable(\'excel\')">Excel</button><button class="btn btn-sm btn-outline" onclick="exportTable(\'pdf\')">PDF</button></div><div class="table-search" style="margin-left:auto"><label>Search:</label><input type="text" id="tableSearch"></div></div>' +
@@ -1185,7 +1185,7 @@ function renderPendingOrders() {
     const data = filterAndSort(AppData.pendingOrders, cols);
     const pg = paginate(data);
     let rows = pg.items.map(o =>
-        '<tr><td>' + o.id + '</td><td>' + o.customer + '</td><td>' + o.items + '</td><td>AED ' + Number(o.amount).toLocaleString() + '</td><td>' + o.date + '</td><td><span class="status-badge pending">' + o.status + '</span></td><td><div class="action-btns">' +
+        '<tr><td>' + o.id + '</td><td>' + o.customer + '</td><td>' + o.items + '</td><td>₹' + Number(o.amount).toLocaleString() + '</td><td>' + o.date + '</td><td><span class="status-badge pending">' + o.status + '</span></td><td><div class="action-btns">' +
         '<button class="action-btn view" onclick="crudView(\'Order\',FIELDS.pendingOrders,AppData.pendingOrders.find(x=>x.id===\'' + o.id + '\'))"><i class="fa-solid fa-eye"></i></button>' +
         '<button class="action-btn edit" onclick="crudEdit(\'pendingOrders\',\'Order\',FIELDS.pendingOrders,\'' + o.id + '\',\'string\')"><i class="fa-solid fa-pen"></i></button>' +
         '<button class="action-btn delete" onclick="crudDelete(\'pendingOrders\',\'Order\',\'' + o.id + '\')"><i class="fa-solid fa-trash"></i></button>' +
@@ -1209,7 +1209,7 @@ function renderShippedOrders() {
     const data = filterAndSort(AppData.shippedOrders, cols);
     const pg = paginate(data);
     let rows = pg.items.map(o =>
-        '<tr><td>' + o.id + '</td><td>' + o.customer + '</td><td>' + o.items + '</td><td>AED ' + Number(o.amount).toLocaleString() + '</td><td>' + o.date + '</td><td>' + o.trackingNo + '</td><td><span class="status-badge ' + (o.status === 'Delivered' ? 'completed' : 'shipped') + '">' + o.status + '</span></td><td><div class="action-btns">' +
+        '<tr><td>' + o.id + '</td><td>' + o.customer + '</td><td>' + o.items + '</td><td>₹' + Number(o.amount).toLocaleString() + '</td><td>' + o.date + '</td><td>' + o.trackingNo + '</td><td><span class="status-badge ' + (o.status === 'Delivered' ? 'completed' : 'shipped') + '">' + o.status + '</span></td><td><div class="action-btns">' +
         '<button class="action-btn view" onclick="crudView(\'Order\',FIELDS.shippedOrders,AppData.shippedOrders.find(x=>x.id===\'' + o.id + '\'))"><i class="fa-solid fa-eye"></i></button>' +
         '<button class="action-btn edit" onclick="crudEdit(\'shippedOrders\',\'Order\',FIELDS.shippedOrders,\'' + o.id + '\',\'string\')"><i class="fa-solid fa-pen"></i></button>' +
         '</div></td></tr>'
@@ -1236,7 +1236,7 @@ function renderInvoices() {
     const totalOverdue = AppData.invoices.filter(i => i.status === 'Overdue').reduce((s, i) => s + (parseFloat(i.amount) || 0), 0);
 
     let rows = pg.items.map(inv =>
-        '<tr><td>' + inv.id + '</td><td>' + inv.client + '</td><td>AED ' + Number(inv.amount).toLocaleString() + '</td><td>' + inv.date + '</td><td>' + inv.dueDate + '</td><td><span class="status-badge ' + inv.status.toLowerCase() + '">' + inv.status + '</span></td><td><div class="action-btns">' +
+        '<tr><td>' + inv.id + '</td><td>' + inv.client + '</td><td>₹' + Number(inv.amount).toLocaleString() + '</td><td>' + inv.date + '</td><td>' + inv.dueDate + '</td><td><span class="status-badge ' + inv.status.toLowerCase() + '">' + inv.status + '</span></td><td><div class="action-btns">' +
         '<button class="action-btn view" onclick="crudView(\'Invoice\',FIELDS.invoices,AppData.invoices.find(x=>x.id===\'' + inv.id + '\'))"><i class="fa-solid fa-eye"></i></button>' +
         '<button class="action-btn edit" onclick="crudEdit(\'invoices\',\'Invoice\',FIELDS.invoices,\'' + inv.id + '\',\'string\')"><i class="fa-solid fa-pen"></i></button>' +
         '<button class="action-btn delete" onclick="crudDelete(\'invoices\',\'Invoice\',\'' + inv.id + '\')"><i class="fa-solid fa-trash"></i></button>' +
@@ -1245,9 +1245,9 @@ function renderInvoices() {
 
     return '<div class="page-header"><h1 class="page-title">INVOICES</h1><button class="btn btn-primary" onclick="crudCreate(\'invoices\',\'Invoice\',FIELDS.invoices,\'string\')">Create Invoice</button></div>' +
         '<div class="stat-cards">' +
-        '<div class="stat-card green"><div class="stat-info"><h4>Paid</h4><div class="stat-number">AED ' + totalPaid.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div></div>' +
-        '<div class="stat-card orange"><div class="stat-info"><h4>Pending</h4><div class="stat-number">AED ' + totalPending.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-clock"></i></div></div>' +
-        '<div class="stat-card pink"><div class="stat-info"><h4>Overdue</h4><div class="stat-number">AED ' + totalOverdue.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-triangle-exclamation"></i></div></div>' +
+        '<div class="stat-card green"><div class="stat-info"><h4>Paid</h4><div class="stat-number">₹' + totalPaid.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div></div>' +
+        '<div class="stat-card orange"><div class="stat-info"><h4>Pending</h4><div class="stat-number">₹' + totalPending.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-clock"></i></div></div>' +
+        '<div class="stat-card pink"><div class="stat-info"><h4>Overdue</h4><div class="stat-number">₹' + totalOverdue.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-triangle-exclamation"></i></div></div>' +
         '</div>' +
         '<div class="table-toolbar"><div class="toolbar-actions"><button class="btn btn-sm btn-outline" onclick="exportTable(\'copy\')">Copy</button><button class="btn btn-sm btn-outline" onclick="exportTable(\'excel\')">Excel</button><button class="btn btn-sm btn-outline" onclick="exportTable(\'pdf\')">PDF</button></div><div class="table-search" style="margin-left:auto"><label>Search:</label><input type="text" id="tableSearch"></div></div>' +
         '<div class="data-table-wrapper"><table class="data-table"><thead><tr>' + buildTableHeader(cols) + '</tr></thead><tbody>' + rows + '</tbody></table></div>' +
@@ -1267,7 +1267,7 @@ function renderPayments() {
     const totalReceived = AppData.payments.filter(p => p.status === 'Paid').reduce((s, p) => s + (parseFloat(p.amount) || 0), 0);
 
     let rows = pg.items.map(p =>
-        '<tr><td>' + p.id + '</td><td>' + p.invoice + '</td><td>' + p.client + '</td><td>AED ' + Number(p.amount).toLocaleString() + '</td><td>' + p.date + '</td><td>' + p.method + '</td><td><span class="status-badge paid">' + p.status + '</span></td><td><div class="action-btns">' +
+        '<tr><td>' + p.id + '</td><td>' + p.invoice + '</td><td>' + p.client + '</td><td>₹' + Number(p.amount).toLocaleString() + '</td><td>' + p.date + '</td><td>' + p.method + '</td><td><span class="status-badge paid">' + p.status + '</span></td><td><div class="action-btns">' +
         '<button class="action-btn view" onclick="crudView(\'Payment\',FIELDS.payments,AppData.payments.find(x=>x.id===\'' + p.id + '\'))"><i class="fa-solid fa-eye"></i></button>' +
         '<button class="action-btn edit" onclick="crudEdit(\'payments\',\'Payment\',FIELDS.payments,\'' + p.id + '\',\'string\')"><i class="fa-solid fa-pen"></i></button>' +
         '</div></td></tr>'
@@ -1275,7 +1275,7 @@ function renderPayments() {
 
     return '<div class="page-header"><h1 class="page-title">PAYMENTS</h1><button class="btn btn-primary" onclick="crudCreate(\'payments\',\'Payment\',FIELDS.payments,\'string\')">Record Payment</button></div>' +
         '<div class="stat-cards">' +
-        '<div class="stat-card green"><div class="stat-info"><h4>Total Received</h4><div class="stat-number">AED ' + totalReceived.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div></div>' +
+        '<div class="stat-card green"><div class="stat-info"><h4>Total Received</h4><div class="stat-number">₹' + totalReceived.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div></div>' +
         '</div>' +
         '<div class="table-toolbar"><div class="toolbar-actions"><button class="btn btn-sm btn-outline" onclick="exportTable(\'copy\')">Copy</button><button class="btn btn-sm btn-outline" onclick="exportTable(\'excel\')">Excel</button><button class="btn btn-sm btn-outline" onclick="exportTable(\'pdf\')">PDF</button></div><div class="table-search" style="margin-left:auto"><label>Search:</label><input type="text" id="tableSearch"></div></div>' +
         '<div class="data-table-wrapper"><table class="data-table"><thead><tr>' + buildTableHeader(cols) + '</tr></thead><tbody>' + rows + '</tbody></table></div>' +
@@ -1297,7 +1297,7 @@ function renderExpenses() {
     const pending = AppData.expenses.filter(e => e.status === 'Pending').reduce((s, e) => s + (parseFloat(e.amount) || 0), 0);
 
     let rows = pg.items.map(e =>
-        '<tr><td>' + e.category + '</td><td>' + e.description + '</td><td>AED ' + Number(e.amount).toLocaleString() + '</td><td>' + e.date + '</td><td><span class="status-badge ' + (e.status === 'Approved' ? 'completed' : e.status === 'Pending' ? 'pending' : 'lost') + '">' + e.status + '</span></td><td><div class="action-btns">' +
+        '<tr><td>' + e.category + '</td><td>' + e.description + '</td><td>₹' + Number(e.amount).toLocaleString() + '</td><td>' + e.date + '</td><td><span class="status-badge ' + (e.status === 'Approved' ? 'completed' : e.status === 'Pending' ? 'pending' : 'lost') + '">' + e.status + '</span></td><td><div class="action-btns">' +
         '<button class="action-btn view" onclick="crudView(\'Expense\',FIELDS.expenses,AppData.expenses.find(x=>x.id===' + e.id + '))"><i class="fa-solid fa-eye"></i></button>' +
         '<button class="action-btn edit" onclick="crudEdit(\'expenses\',\'Expense\',FIELDS.expenses,' + e.id + ')"><i class="fa-solid fa-pen"></i></button>' +
         '<button class="action-btn delete" onclick="crudDelete(\'expenses\',\'Expense\',' + e.id + ')"><i class="fa-solid fa-trash"></i></button>' +
@@ -1306,9 +1306,9 @@ function renderExpenses() {
 
     return '<div class="page-header"><h1 class="page-title">EXPENSES</h1><button class="btn btn-primary" onclick="crudCreate(\'expenses\',\'Expense\',FIELDS.expenses)">Add Expense</button></div>' +
         '<div class="stat-cards">' +
-        '<div class="stat-card green"><div class="stat-info"><h4>Total Expenses</h4><div class="stat-number">AED ' + totalExpenses.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-receipt"></i></div></div>' +
-        '<div class="stat-card purple"><div class="stat-info"><h4>Approved</h4><div class="stat-number">AED ' + approved.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div></div>' +
-        '<div class="stat-card orange"><div class="stat-info"><h4>Pending</h4><div class="stat-number">AED ' + pending.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-clock"></i></div></div>' +
+        '<div class="stat-card green"><div class="stat-info"><h4>Total Expenses</h4><div class="stat-number">₹' + totalExpenses.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-receipt"></i></div></div>' +
+        '<div class="stat-card purple"><div class="stat-info"><h4>Approved</h4><div class="stat-number">₹' + approved.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div></div>' +
+        '<div class="stat-card orange"><div class="stat-info"><h4>Pending</h4><div class="stat-number">₹' + pending.toLocaleString() + '</div></div><div class="stat-icon"><i class="fa-solid fa-clock"></i></div></div>' +
         '</div>' +
         '<div class="table-toolbar"><div class="toolbar-actions"><button class="btn btn-sm btn-outline" onclick="exportTable(\'copy\')">Copy</button><button class="btn btn-sm btn-outline" onclick="exportTable(\'excel\')">Excel</button><button class="btn btn-sm btn-outline" onclick="exportTable(\'pdf\')">PDF</button></div><div class="table-search" style="margin-left:auto"><label>Search:</label><input type="text" id="tableSearch"></div></div>' +
         '<div class="data-table-wrapper"><table class="data-table"><thead><tr>' + buildTableHeader(cols) + '</tr></thead><tbody>' + rows + '</tbody></table></div>' +
