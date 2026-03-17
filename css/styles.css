@@ -889,18 +889,21 @@ body.login-mode .main-content {
 /* ----- 11. Stat Cards ----- */
 .stat-cards {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
     margin-bottom: 24px;
 }
 
 .stat-card {
     background: var(--white);
     border-radius: var(--radius-md);
-    padding: 18px;
+    padding: 16px;
     box-shadow: var(--shadow-sm);
-    border: 2px dashed transparent;
+    border: 1px solid var(--gray-200);
     transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .stat-card:hover {
@@ -911,16 +914,35 @@ body.login-mode .main-content {
 .stat-card .stat-icon {
     width: 42px;
     height: 42px;
+    min-width: 42px;
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    margin-bottom: 12px;
+}
+
+.stat-card .stat-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.stat-card .stat-info h4 {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-500);
+    margin: 0 0 2px 0;
+}
+
+.stat-card .stat-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gray-800);
+    line-height: 1.2;
 }
 
 .stat-card .stat-value {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 700;
     color: var(--gray-800);
     line-height: 1.2;
@@ -953,7 +975,7 @@ body.login-mode .main-content {
 }
 
 .stat-card.green .stat-icon {
-    background: var(--card-green-border);
+    background: #c8e6c9;
     color: var(--green-dark);
 }
 
@@ -963,7 +985,7 @@ body.login-mode .main-content {
 }
 
 .stat-card.purple .stat-icon {
-    background: var(--card-purple-border);
+    background: #e1bee7;
     color: #4a148c;
 }
 
@@ -973,7 +995,7 @@ body.login-mode .main-content {
 }
 
 .stat-card.pink .stat-icon {
-    background: var(--card-pink-border);
+    background: #f8bbd0;
     color: #880e4f;
 }
 
@@ -983,7 +1005,7 @@ body.login-mode .main-content {
 }
 
 .stat-card.orange .stat-icon {
-    background: var(--card-orange-border);
+    background: #ffe0b2;
     color: #e65100;
 }
 
@@ -2056,9 +2078,7 @@ body.login-mode .main-content {
 
 /* ----- 25. Responsive Breakpoints ----- */
 @media (min-width: 576px) {
-    .stat-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    /* stat-cards already 2-col by default */
 }
 
 @media (min-width: 768px) {
